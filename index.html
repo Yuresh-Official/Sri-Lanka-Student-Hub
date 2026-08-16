@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="si">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sri Lanka Student Hub - Past Papers</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+        }
+
+        /* Header Styling */
+        header {
+            background-color: #0056b3;
+            color: white;
+            padding: 30px 10%;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.2rem;
+            margin-bottom: 8px;
+        }
+
+        header p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Search Bar */
+        .search-container {
+            margin: 25px auto;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .search-container input {
+            width: 100%;
+            max-width: 500px;
+            padding: 12px 20px;
+            font-size: 16px;
+            border: 2px solid #0056b3;
+            border-radius: 25px;
+            outline: none;
+        }
+
+        /* Container & Cards */
+        .container {
+            max-width: 1000px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        .category-title {
+            color: #0056b3;
+            margin: 25px 0 15px 0;
+            border-bottom: 2px solid #0056b3;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        .paper-card {
+            background: white;
+            padding: 18px 25px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .paper-info h3 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .paper-info p {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 4px;
+        }
+
+        /* Download Button */
+        .download-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 600px) {
+            .paper-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+            .download-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Sri Lanka Student Hub</h1>
+        <p>Download G.C.E. A/L & O/L Past Papers Easily</p>
+    </header>
+
+    <div class="search-container">
+        <input type="text" placeholder="Search Past Papers (e.g., Maths, Science, 2024)...">
+    </div>
+
+    <div class="container">
+        <!-- Advanced Level Section -->
+        <h2 class="category-title">G.C.E. A/L Past Papers</h2>
+
+        <div class="paper-card">
+            <div class="paper-info">
+                <h3>2024 A/L Combined Mathematics</h3>
+                <p>Medium: Sinhala | Paper I & II</p>
+            </div>
+            <!-- href="මෙතැනට_ඔබගේ_PDF_Link_එක_දමන්න" -->
+            <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-info">
+                <h3>2024 A/L Physics</h3>
+                <p>Medium: English | Paper I & II</p>
+            </div>
+            <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-info">
+                <h3>2023 A/L Chemistry</h3>
+                <p>Medium: Sinhala | Paper I & II</p>
+            </div>
+            <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
+        </div>
+
+        <!-- Ordinary Level Section -->
+        <h2 class="category-title">G.C.E. O/L Past Papers</h2>
+
+        <div class="paper-card">
+            <div class="paper-info">
+                <h3>2023 O/L Science</h3>
+                <p>Medium: Sinhala | Paper I & II</p>
+            </div>
+            <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
+        </div>
+
+        <div class="paper-card">
+            <div class="paper-info">
+                <h3>2023 O/L Mathematics</h3>
+                <p>Medium: Sinhala | Paper I & II</p>
+            </div>
+            <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Sri Lanka Student Hub. All Rights Reserved.
+    </footer>
+
+</body>
+</html>
