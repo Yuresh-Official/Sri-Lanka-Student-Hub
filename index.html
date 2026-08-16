@@ -13,7 +13,7 @@
         }
 
         html {
-            scroll-behavior: smooth; /* Button ebuwahama smooth wa scroll wenna */
+            scroll-behavior: smooth;
         }
 
         body {
@@ -21,20 +21,282 @@
             color: #333;
         }
 
-        /* Header Styling */
-        header {
+        /* Navigation Bar (Top Bar) */
+        .navbar {
             background-color: #0056b3;
             color: white;
-            padding: 40px 20px;
+            padding: 15px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+        }
+
+        /* Menu Links */
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 15px;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .nav-links a:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Hamburger Icon (ඉරි කෑලි 3) */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            border-radius: 2px;
+            transition: 0.3s;
+        }
+
+        /* Header Section */
+        header {
+            background-color: #004494;
+            color: white;
+            padding: 30px 20px;
             text-align: center;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         header h1 {
-            font-size: 2.2rem;
+            font-size: 2rem;
             margin-bottom: 8px;
         }
 
+        /* Container & Sections */
+        .container {
+            max-width: 1000px;
+            margin: 30px auto;
+            padding: 0 20px;
+        }
+
+        .category-section {
+            margin-bottom: 40px;
+            padding-top: 20px;
+        }
+
+        .category-title {
+            color: #0056b3;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #0056b3;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Paper Cards */
+        .paper-card {
+            background: white;
+            padding: 18px 25px;
+            margin-bottom: 15px;
+            border-radius: 8px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .paper-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
+
+        .paper-info h3 {
+            font-size: 1.1rem;
+            color: #2c3e50;
+        }
+
+        .paper-info p {
+            font-size: 0.9rem;
+            color: #7f8c8d;
+            margin-top: 4px;
+        }
+
+        /* Download Button */
+        .download-btn {
+            background-color: #28a745;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: background-color 0.2s;
+        }
+
+        .download-btn:hover {
+            background-color: #218838;
+        }
+
+        /* Mobile Responsive View */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex; /* Mobile wala pamanak iri kaali 3 pennanawaa */
+            }
+
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                position: absolute;
+                top: 60px;
+                right: 0;
+                background-color: #0056b3;
+                width: 100%;
+                text-align: center;
+                padding: 15px 0;
+                box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            }
+
+            .nav-links.active {
+                display: flex; /* Menu click kalama list eka eliyata enawa */
+            }
+
+            .nav-links li {
+                margin: 10px 0;
+            }
+
+            .paper-card {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 12px;
+            }
+
+            .download-btn {
+                width: 100%;
+                text-align: center;
+            }
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #222;
+            color: white;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Navigation Bar -->
+    <nav class="navbar">
+        <div class="logo">Sri Lanka Student Hub</div>
+        
+        <!-- Hamburger Icon (ඉරි කෑලි 3) -->
+        <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+
+        <!-- Hidden Navigation Links -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#al-section" onclick="closeMenu()">A/L Past Papers</a></li>
+            <li><a href="#ol-section" onclick="closeMenu()">O/L Past Papers</a></li>
+            <!-- Thawa link danna awashyanam methanata ekathu karanna -->
+        </ul>
+    </nav>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Welcome to Sri Lanka Student Hub</h1>
+        <p>Download G.C.E. A/L & O/L Past Papers Easily</p>
+    </header>
+
+    <div class="container">
+
+        <!-- A/L Section -->
+        <div id="al-section" class="category-section">
+            <h2 class="category-title">G.C.E. A/L Past Papers</h2>
+
+            <div class="paper-card">
+                <div class="paper-info">
+                    <h3>2024 A/L Combined Mathematics</h3>
+                    <p>Medium: Sinhala | Paper I & II</p>
+                </div>
+                <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-info">
+                    <h3>2024 A/L Physics</h3>
+                    <p>Medium: English | Paper I & II</p>
+                </div>
+                <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
+            </div>
+        </div>
+
+        <!-- O/L Section -->
+        <div id="ol-section" class="category-section">
+            <h2 class="category-title">G.C.E. O/L Past Papers</h2>
+
+            <div class="paper-card">
+                <div class="paper-info">
+                    <h3>2023 O/L Science</h3>
+                    <p>Medium: Sinhala | Paper I & II</p>
+                </div>
+                <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
+            </div>
+
+            <div class="paper-card">
+                <div class="paper-info">
+                    <h3>2023 O/L Mathematics</h3>
+                    <p>Medium: Sinhala | Paper I & II</p>
+                </div>
+                <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2026 Sri Lanka Student Hub. All Rights Reserved.
+    </footer>
+
+    <!-- JavaScript for Hamburger Menu Toggle -->
+    <script>
+        function toggleMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const navLinks = document.getElementById('navLinks');
+            navLinks.classList.remove('active');
+        }
+    </script>
+
+</body>
+</html>
         header p {
             font-size: 1rem;
             opacity: 0.9;
