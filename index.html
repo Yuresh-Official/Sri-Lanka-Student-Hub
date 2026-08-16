@@ -12,6 +12,10 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
 
+        html {
+            scroll-behavior: smooth; /* Button ebuwahama smooth wa scroll wenna */
+        }
+
         body {
             background-color: #f4f7f6;
             color: #333;
@@ -21,7 +25,7 @@
         header {
             background-color: #0056b3;
             color: white;
-            padding: 30px 10%;
+            padding: 40px 20px;
             text-align: center;
             box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
@@ -36,38 +40,55 @@
             opacity: 0.9;
         }
 
-        /* Search Bar */
-        .search-container {
-            margin: 25px auto;
-            text-align: center;
-            padding: 0 20px;
+        /* Category Navigation Buttons (Main Buttons) */
+        .category-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 25px;
+            flex-wrap: wrap;
         }
 
-        .search-container input {
-            width: 100%;
-            max-width: 500px;
-            padding: 12px 20px;
-            font-size: 16px;
-            border: 2px solid #0056b3;
-            border-radius: 25px;
-            outline: none;
+        .main-btn {
+            background-color: #ffffff;
+            color: #0056b3;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
         }
 
-        /* Container & Cards */
+        .main-btn:hover {
+            background-color: #ffc107;
+            color: #000;
+            transform: translateY(-3px);
+        }
+
+        /* Container & Sections */
         .container {
             max-width: 1000px;
-            margin: 20px auto;
+            margin: 30px auto;
             padding: 0 20px;
+        }
+
+        .category-section {
+            margin-bottom: 40px;
+            padding-top: 20px;
         }
 
         .category-title {
             color: #0056b3;
-            margin: 25px 0 15px 0;
-            border-bottom: 2px solid #0056b3;
+            font-size: 1.6rem;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #0056b3;
             display: inline-block;
             padding-bottom: 5px;
         }
 
+        /* Paper Cards */
         .paper-card {
             background: white;
             padding: 18px 25px;
@@ -112,7 +133,7 @@
             background-color: #218838;
         }
 
-        /* Responsive Design */
+        /* Mobile View */
         @media (max-width: 600px) {
             .paper-card {
                 flex-direction: column;
@@ -138,62 +159,68 @@
 </head>
 <body>
 
+    <!-- Header Section with Top Buttons -->
     <header>
         <h1>Sri Lanka Student Hub</h1>
-        <p>Download G.C.E. A/L & O/L Past Papers Easily</p>
+        <p>Select your grade to download Past Papers</p>
+
+        <!-- Main Category Buttons -->
+        <div class="category-buttons">
+            <a href="#al-section" class="main-btn">G.C.E. A/L Papers</a>
+            <a href="#ol-section" class="main-btn">G.C.E. O/L Papers</a>
+            <!-- Aluth Category Button ekak dานනවනම් මෙතැනට එකතු කරන්න -->
+        </div>
     </header>
 
-    <div class="search-container">
-        <input type="text" placeholder="Search Past Papers (e.g., Maths, Science, 2024)...">
-    </div>
-
     <div class="container">
-        <!-- Advanced Level Section -->
-        <h2 class="category-title">G.C.E. A/L Past Papers</h2>
 
-        <div class="paper-card">
-            <div class="paper-info">
-                <h3>2024 A/L Combined Mathematics</h3>
-                <p>Medium: Sinhala | Paper I & II</p>
+        <!-- A/L Section -->
+        <div id="al-section" class="category-section">
+            <h2 class="category-title">G.C.E. A/L Past Papers</h2>
+
+            <!-- Paper Item 1 -->
+            <div class="paper-card">
+                <div class="paper-info">
+                    <h3>2024 A/L Combined Mathematics</h3>
+                    <p>Medium: Sinhala | Paper I & II</p>
+                </div>
+                <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
             </div>
-            <!-- href="මෙතැනට_ඔබගේ_PDF_Link_එක_දමන්න" -->
-            <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
+
+            <!-- Paper Item 2 -->
+            <div class="paper-card">
+                <div class="paper-info">
+                    <h3>2024 A/L Physics</h3>
+                    <p>Medium: English | Paper I & II</p>
+                </div>
+                <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
+            </div>
         </div>
 
-        <div class="paper-card">
-            <div class="paper-info">
-                <h3>2024 A/L Physics</h3>
-                <p>Medium: English | Paper I & II</p>
+
+        <!-- O/L Section -->
+        <div id="ol-section" class="category-section">
+            <h2 class="category-title">G.C.E. O/L Past Papers</h2>
+
+            <!-- Paper Item 1 -->
+            <div class="paper-card">
+                <div class="paper-info">
+                    <h3>2023 O/L Science</h3>
+                    <p>Medium: Sinhala | Paper I & II</p>
+                </div>
+                <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
             </div>
-            <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
+
+            <!-- Paper Item 2 -->
+            <div class="paper-card">
+                <div class="paper-info">
+                    <h3>2023 O/L Mathematics</h3>
+                    <p>Medium: Sinhala | Paper I & II</p>
+                </div>
+                <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
+            </div>
         </div>
 
-        <div class="paper-card">
-            <div class="paper-info">
-                <h3>2023 A/L Chemistry</h3>
-                <p>Medium: Sinhala | Paper I & II</p>
-            </div>
-            <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
-        </div>
-
-        <!-- Ordinary Level Section -->
-        <h2 class="category-title">G.C.E. O/L Past Papers</h2>
-
-        <div class="paper-card">
-            <div class="paper-info">
-                <h3>2023 O/L Science</h3>
-                <p>Medium: Sinhala | Paper I & II</p>
-            </div>
-            <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
-        </div>
-
-        <div class="paper-card">
-            <div class="paper-info">
-                <h3>2023 O/L Mathematics</h3>
-                <p>Medium: Sinhala | Paper I & II</p>
-            </div>
-            <a href="YOUR_GOOGLE_DRIVE_PDF_LINK_HERE" target="_blank" class="download-btn">Download PDF</a>
-        </div>
     </div>
 
     <footer>
